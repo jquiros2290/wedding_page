@@ -1,0 +1,11 @@
+.container {
+	margin: auto;
+	text-align: center;
+
+	/*padding-left: 50px;*/
+	/*padding-right: 50px;*/
+}
+	.container img{
+		margin: auto;
+		opacity: 0.5;
+	}	

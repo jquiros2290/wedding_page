@@ -1,0 +1,23 @@
+.header {
+	padding-top: 20px;
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+	display: inline;
+	padding-left: 10px;
+	font-size: 50px;
+	font-family: 'Sacramento', cursive;
+}
+
+.main a {
+	text-decoration: none;
+	color: black;
+}
