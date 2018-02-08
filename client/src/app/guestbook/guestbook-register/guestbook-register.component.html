@@ -1,0 +1,88 @@
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3>Register</h3>
+                <form 
+                    (submit)="onCreate(); createUser.resetForm()"
+                    #createUser="ngForm">
+                    <div class="form-group">
+                        <input
+                            type="text"
+                            name="first_name"
+                            required
+                            minlength="2"
+                            maxlength="30"
+                            [(ngModel)]="user.first_name"
+                            #first_name="ngModel"
+                            placeholder="First Name">
+                        <small
+                            class="errors"
+                            [hidden]="first_name.valid || (first_name.untouched && !createUser.submitted)"
+                            >First name is required (Minimum character length of 2).
+                        </small>
+                    </div>
+                    <div class="form-group">
+                        <input
+                            type="text"
+                            name="last_name"
+                            required
+                            minlength="2"
+                            maxlength="30"
+                            [(ngModel)]="user.last_name"
+                            #last_name="ngModel"
+                            placeholder="Last Name">
+                        <small
+                            class="errors"
+                            [hidden]="last_name.valid || (last_name.untouched && !createUser.submitted)"
+                            >Last name is required (Minimum character length of 2).
+                        </small>
+                    </div>
+                    <div class="form-group">
+                        <input
+                            type="text"
+                            name="email"
+                            required
+                            minlength="2"
+                            maxlength="30"
+                            [(ngModel)]="user.email"
+                            #email="ngModel"
+                            placeholder="Email Address">
+                        <small
+                            class="errors"
+                            [hidden]="email.valid || (email.untouched && !createUser.submitted)"
+                            >Valid email is required.
+                        </small>
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                        <input
+                            type="password"
+                            name="password"
+                            required
+                            minlength="8"
+                            maxlength="30"
+                            [(ngModel)]="user.password"
+                            #password="ngModel"
+                            placeholder="Password">
+                        <small
+                            class="errors"
+                            [hidden]="password.valid || (password.untouched && !createUser.submitted)"
+                            >Password must be atleast 8 characters.
+                        </small>
+                        <small id="emailHelp" class="form-text text-muted">Do not lose your password! </small>
+                    </div>
+                    <div class="form-group">
+                        <button
+                            class="btn btn-primary"
+                            [disabled]="!createUser.valid"
+                            >Register</button>
+                    </div>
+                    <div>
+                    	<a [routerLink]="['/guestbook', 'login']">Already Registered?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>

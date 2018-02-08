@@ -5,13 +5,13 @@ import { Router } from '@angular/router';
 
 
 @Component({
-  selector: 'app-guestbook-login',
-  templateUrl: './guestbook-login.component.html',
-  styleUrls: ['./guestbook-login.component.css', '../../../assets/stylesheets/bootstrap.min.css']
+  selector: 'app-guestbook-register',
+  templateUrl: './guestbook-register.component.html',
+  styleUrls: ['./guestbook-register.component.css', '../../../assets/stylesheets/bootstrap.min.css']
 })
-export class GuestbookLoginComponent implements OnInit {
+export class GuestbookRegisterComponent implements OnInit {
 	user: User;
-  errors = [];
+  errors: any;
 
   constructor(
     private _route: Router,
@@ -22,21 +22,19 @@ export class GuestbookLoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit() {
-    this.errors = [];
+  onCreate() {
     console.log('got here');
-    this._guestbookService.logUser(this.user,
+    this._guestbookService.createUser(this.user,
       (user) => {
         console.log(user)
         //Navigate to dashboard
+        // console.log('check this out', user)
         this._route.navigateByUrl('/guestbook/show');
       },
       (err) => {
         // Display Errors
-        this.errors.push(err)
+        this.errors = err
         console.log(err)
-        this._route.navigateByUrl('/guestbook/login');
-
 
     });
   }
