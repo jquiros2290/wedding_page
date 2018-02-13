@@ -1,7 +1,11 @@
 .header {
 	padding-top: 20px;
 	text-align: center;
+	display: flex;
+    flex-direction: column;
 	margin-bottom: 50px;
+	transform: 300ms all ease;
+	flex: 1;
 }
 
 ul {
@@ -15,9 +19,11 @@ ul li {
 	padding-left: 10px;
 	font-size: 50px;
 	font-family: 'Sacramento', cursive;
+	position: relative;
 }
 
 .main a {
 	text-decoration: none;
 	color: black;
+	transition: 250ms all ease;
 }

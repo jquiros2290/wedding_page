@@ -10,13 +10,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./guestbook-login.component.css', '../../../assets/stylesheets/bootstrap.min.css']
 })
 export class GuestbookLoginComponent implements OnInit {
-	user: User;
+	user: User = new User();
   errors = [];
 
   constructor(
     private _route: Router,
     private _guestbookService: GuestbookService) {
-  	this.user = new User();
   	}
 
   ngOnInit() {
@@ -24,10 +23,10 @@ export class GuestbookLoginComponent implements OnInit {
 
   onSubmit() {
     this.errors = [];
-    console.log('got here');
+    // console.log('got here');
     this._guestbookService.logUser(this.user,
       (user) => {
-        console.log(user)
+        // console.log(user)
         //Navigate to dashboard
         this._route.navigateByUrl('/guestbook/show');
       },
@@ -40,4 +39,6 @@ export class GuestbookLoginComponent implements OnInit {
 
     });
   }
+
+  
 }

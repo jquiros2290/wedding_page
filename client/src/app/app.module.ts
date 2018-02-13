@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
-
+import { AgmCoreModule } from '@agm/core';
 
 import { GuestbookService } from './guestbook/guestbook.service';
 
@@ -17,6 +17,7 @@ import { GuestbookIndexComponent } from './guestbook/guestbook-index/guestbook-i
 import { GuestbookLoginComponent } from './guestbook/guestbook-login/guestbook-login.component';
 import { GuestbookRegisterComponent } from './guestbook/guestbook-register/guestbook-register.component';
 import { ComingComponent } from './coming/coming.component';
+import { GuestbookPostComponent } from './guestbook/guestbook-post/guestbook-post.component';
 
 
 @NgModule({
@@ -31,12 +32,16 @@ import { ComingComponent } from './coming/coming.component';
     GuestbookLoginComponent,
     GuestbookRegisterComponent,
     ComingComponent,
+    GuestbookPostComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpModule
+    HttpModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAgFY0wVD8MUskEgxejKHWKv5BJa91jri4'
+    })
   ],
   providers: [GuestbookService],
   bootstrap: [AppComponent]

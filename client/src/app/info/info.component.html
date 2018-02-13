@@ -1,10 +1,59 @@
-<div class="container info">
+<link href="https://fonts.googleapis.com/css?family=Dancing+Script|EB+Garamond|Sacramento" rel="stylesheet">
+<div class="container">
 	<div class="row">
-		<div class="col-md-12 main">
-		Ceremony Location: 		
+		<div class="col-md-6 info">
+			<h2>Ceremony</h2>
+			<table>
+				<tr>
+					<td>
+						Venue: 
+					</td>
+					<td>
+						View of the World Terrace Club
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Address: 
+					</td>
+					<td>
+						140 Washington St, New York, NY 10006
+					</td>
+				</tr>
+			</table>
 		</div>
-		<div class="col-md-12 main">
-		Reception Location: 		
+		<div class="col-md-6 map">
+			<agm-map [latitude]="lat1" [longitude]="lng1" [zoom]="zoom">
+	 			<agm-marker [latitude]="lat1" [longitude]="lng1"></agm-marker>
+			</agm-map>
 		</div>
 	</div>
-</div> 
+	<div class="row">
+		<div class="col-md-6 info">
+			<h2>Reception</h2>
+			<table>
+				<tr>
+					<td>
+						Venue: 
+					</td>
+					<td>
+						Trinity Place Restaurant and Bar
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Address: 
+					</td>
+					<td>
+						115 Broadway, New York, NY 10006
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="col-md-6 map">
+			<agm-map [latitude]="lat2" [longitude]="lng2" [zoom]="zoom">
+	 			<agm-marker [latitude]="lat2" [longitude]="lng2"></agm-marker>
+			</agm-map>
+		</div>
+	</div>
+</div>

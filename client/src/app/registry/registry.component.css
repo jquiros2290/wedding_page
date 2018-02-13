@@ -1,3 +1,8 @@
 #registry {
 	margin: auto;
+	text-align: center;
 }
+	#registry img{
+		margin: auto;
+		width: 95%;
+	}

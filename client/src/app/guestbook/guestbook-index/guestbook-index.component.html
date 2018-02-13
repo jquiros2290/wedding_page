@@ -1,3 +1,51 @@
-<p>
-  guestbook-index works!
-</p>
+<link href="https://fonts.googleapis.com/css?family=Dancing+Script|EB+Garamond|Sacramento" rel="stylesheet">
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 logout">
+			<ul>
+				<li><button (click)="logout()">logout</button></li>
+			</ul>
+		</div>
+	</div>
+	<div class="row main">
+		<div class="col-md-3">
+		</div>
+		<div class="col-md-6 sign">
+			<form (submit)="onSubmit()" #postform="ngForm">
+			    <table class="table">
+			        <tr>
+			            <td>
+			            	<textarea
+			            	  placeholder="Your beautiful message here..."
+			            	  required
+			                  class="form-control" 
+			                  type="text" 
+			                  name="content"
+			                  minlength="10"
+			                  maxlength="200" 
+			                  [(ngModel)]="post.content"
+			                  #content="ngModel"
+			                  >
+			              	</textarea>
+			            </td>
+			        </tr>
+			        <br>
+			            <button type="submit" class="btn-sm btn-default btn-block" [disabled]="!postform.valid">Sign Guestbook</button>
+			    </table>
+			</form>
+		</div>
+		<div class="col-md-3">
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12 love">
+			<h1>Be one of the first to show some love &#9829;</h1>
+		</div>
+		<div class="col-md-4 signed" *ngFor="let post of posts">
+			<p class="name">{{ post._user.first_name }} writes:
+			<span id="date">{{ post.createdAt | date: 'longDate' }}</span></p>
+			<p class="content">{{ post.content }}</p>
+			<button class="btn btn-sm btn-danger" (click)="delete(post._id)" *ngIf="user?._id == post._user._id">Delete</button>
+		</div>
+	</div>
+</div>

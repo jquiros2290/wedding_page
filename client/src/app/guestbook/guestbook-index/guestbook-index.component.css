@@ -1,0 +1,77 @@
+.name {
+	font-size: 30px;
+	font-family: 'EB Garamond', serif;
+}
+
+.content {
+	font-family: 'Dancing Script', cursive;
+	font-size: 25px;
+}
+
+.love {
+	font-family: 'Dancing Script', cursive;
+	font-size: 25px;
+	text-align: center;
+}
+
+.sign {
+	border: solid 1px;
+	padding: 5px;
+}
+	.sign textarea{
+		height: 150px;
+	}
+
+.main {
+	margin-bottom: 50px;
+}
+
+
+.signed {
+	white-space: pre-wrap;      /* CSS3 */   
+   	white-space: -moz-pre-wrap; /* Firefox */    
+   	white-space: -pre-wrap;     /* Opera <7 */   
+   	white-space: -o-pre-wrap;   /* Opera 7 */    
+   	word-wrap: break-word;
+	margin-bottom: 30px;
+	border-bottom: solid 1px;
+}
+	.signed button{
+		float: left;
+		margin-bottom: 20px;
+	}
+
+#content {
+	vertical-align: top;
+}
+
+#date {
+	font-size: 15px;
+	float: left;
+}
+
+.logout {
+	text-align: center;
+	margin-top: -50px;
+	margin-bottom: 20px;
+}
+	.logout button{
+		padding: 0;
+		border: none;
+		background: none;
+	}
+
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+	display: inline;
+	padding-left: 10px;
+	font-size: 50px;
+	font-family: 'Sacramento', cursive;
+}

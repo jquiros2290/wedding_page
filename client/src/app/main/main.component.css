@@ -1,11 +1,10 @@
 .container {
 	margin: auto;
 	text-align: center;
-
-	/*padding-left: 50px;*/
-	/*padding-right: 50px;*/
+	font-family: 'Oswald', sans-serif;
 }
 	.container img{
 		margin: auto;
-		opacity: 0.75;
+		width: 95%;
+		opacity: 0.50;
 	}	

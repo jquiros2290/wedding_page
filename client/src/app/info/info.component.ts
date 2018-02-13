@@ -6,6 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./info.component.css']
 })
 export class InfoComponent implements OnInit {
+  lat1: number = 40.7098898;
+  lng1: number = -74.01389890000002;
+  lat2: number = 40.708882;
+  lng2: number = -74.01143259999998;
+  zoom: number = 17;
 
   constructor() { }
 
