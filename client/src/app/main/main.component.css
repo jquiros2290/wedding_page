@@ -1,4 +1,4 @@
-.container {
+/*.container {
 	margin: auto;
 	text-align: center;
 	font-family: 'Oswald', sans-serif;
@@ -7,4 +7,56 @@
 		margin: auto;
 		width: 95%;
 		opacity: 0.50;
-	}	
+	}*/
+
+.polaroid {
+	margin: auto;
+	position: relative;
+}
+ 
+.polaroid img {
+	margin: auto;
+	width: 50%;
+	margin-left: 25%;
+	border: 10px solid #fff;
+	border-bottom: 45px solid #fff;
+	-webkit-box-shadow: 3px 3px 3px 3px #777;
+    -moz-box-shadow: 3px 3px 3px 3px #777;
+    box-shadow: 3px 3px 3px 3px #777;
+}
+ 
+.polaroid p {
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	bottom: 0px;
+	font: 400 18px/1 'Kaushan Script', cursive;
+	color: #888;
+}
+
+@media only screen and (max-width: 414px) {
+	.polaroid {
+		margin: auto;
+		position: relative;
+	}
+	 
+	.polaroid img {
+		margin: auto;
+		width: 90%;
+		margin-left: 2%;
+		border: 10px solid #fff;
+		border-bottom: 45px solid #fff;
+		-webkit-box-shadow: 3px 3px 3px 3px #777;
+	    -moz-box-shadow: 3px 3px 3px 3px #777;
+	    box-shadow: 3px 3px 3px 3px #777;
+	}
+	 
+	.polaroid p {
+		position: absolute;
+		text-align: center;
+		width: 100%;
+		bottom: 0px;
+		font: 400 18px/1 'Kaushan Script', cursive;
+		color: #888;
+	}    
+}
