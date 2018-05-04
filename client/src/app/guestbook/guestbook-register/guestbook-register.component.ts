@@ -25,24 +25,22 @@ export class GuestbookRegisterComponent implements OnInit {
       (user) => {
         if (user) {
           this._route.navigateByUrl('/guestbook/show');
-
-          return
+          return;
         }
       },
-      console.log
+      console.log()
     );
   }
 
   onCreate() {
-    console.log('got here');
     this._guestbookService.createUser(this.user,
       (user) => {
         this._route.navigateByUrl('/guestbook/show');
       },
       (err) => {
         // Display Errors
-        this.errors = err
-        console.log(err)
+        this.errors = [err];
+        console.log(this.errors, 'these errors are from the component');
 
     });
   }

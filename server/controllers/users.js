@@ -20,6 +20,7 @@ module.exports = {
       user.save((err) => {
         if(err){
           let error = err;
+          console.log(err);
           return res.status(400).json(error);
         } 
         session.user_id = user._id;

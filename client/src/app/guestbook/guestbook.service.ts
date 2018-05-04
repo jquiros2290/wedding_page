@@ -20,21 +20,19 @@ export class GuestbookService {
   	this._http.post('/users', user).subscribe(
   		(res) => {
   			const user = res.json();
-  			// console.log(user);
   			this.currentUser = user;
   			callback(this.currentUser);
   		},
   		(err) => {
-  			errorback(err);
+        let error = err.json();
+  			errorback(error);
   		})
   }
 
   logUser(user, callback, errorback) {
-    // console.log(user)
   	this._http.post('/sessions', user).subscribe(
   		(res) => {
   			const user = res.json();
-  			// console.log(user);
   			this.currentUser = user;
   			callback(this.currentUser);
   		},
@@ -81,7 +79,6 @@ export class GuestbookService {
     this._http.get('/posts').subscribe(
       (res) => { 
         const posts = res.json();
-        // console.log('retrieve posts', posts)
         this.posts = posts;
 
         callback(posts);

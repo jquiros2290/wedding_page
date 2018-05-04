@@ -1,7 +1,7 @@
 var path  	 = require('path');
 	users 	 = require('../controllers/users');
 	sessions = require('../controllers/sessions');
-	posts = require('../controllers/posts');
+	posts 	 = require('../controllers/posts');
 
 module.exports = (app) => {
 	//Server Routes are plural

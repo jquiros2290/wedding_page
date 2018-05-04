@@ -1,6 +1,9 @@
 <body>
     <div class="container">
         <div class="row">
+            <div class="col-md-4 text-danger" *ngFor="let error of errors">
+                <p>{{error.message}}</p>
+            </div>
             <div class="col-md-12 text-center">
                 <h3>Register</h3>
                 <form 
@@ -76,7 +79,8 @@
                         <button
                             class="btn btn-primary"
                             [disabled]="!createUser.valid"
-                            >Register</button>
+                            >Register
+                        </button>
                     </div>
                     <div>
                     	<a [routerLink]="['/guestbook', 'login']">Already Registered?</a>
