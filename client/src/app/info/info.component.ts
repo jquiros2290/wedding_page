@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-info',
   templateUrl: './info.component.html',
-  styleUrls: ['./info.component.css']
+  styleUrls: ['./info.component.css', '../../assets/stylesheets/bootstrap.min.css']
 })
 export class InfoComponent implements OnInit {
   lat1: number = 40.7098898;
