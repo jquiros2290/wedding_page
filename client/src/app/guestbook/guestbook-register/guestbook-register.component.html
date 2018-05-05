@@ -1,10 +1,10 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-md-4 text-danger" *ngFor="let error of errors">
-                <p>{{error.message}}</p>
-            </div>
             <div class="col-md-12 text-center">
+                <div class="text-danger errors text-center" *ngFor="let error of errors">
+                    <p>{{error}}</p>
+                </div>
                 <h3>Register</h3>
                 <form 
                     (submit)="onCreate(); createUser.resetForm()"
@@ -19,11 +19,11 @@
                             [(ngModel)]="user.first_name"
                             #first_name="ngModel"
                             placeholder="First Name">
-                        <small
-                            class="errors"
+                        <p><small
+                            class="errors form-text"
                             [hidden]="first_name.valid || (first_name.untouched && !createUser.submitted)"
                             >First name is required (Minimum character length of 2).
-                        </small>
+                        </small></p>
                     </div>
                     <div class="form-group">
                         <input
@@ -35,11 +35,11 @@
                             [(ngModel)]="user.last_name"
                             #last_name="ngModel"
                             placeholder="Last Name">
-                        <small
-                            class="errors"
+                        <p><small
+                            class="errors form-text"
                             [hidden]="last_name.valid || (last_name.untouched && !createUser.submitted)"
                             >Last name is required (Minimum character length of 2).
-                        </small>
+                        </small></p>
                     </div>
                     <div class="form-group">
                         <input
@@ -51,11 +51,11 @@
                             [(ngModel)]="user.email"
                             #email="ngModel"
                             placeholder="Email Address">
-                        <small
-                            class="errors"
+                        <p><small
+                            class="errors form-text"
                             [hidden]="email.valid || (email.untouched && !createUser.submitted)"
                             >Valid email is required.
-                        </small>
+                        </small></p>
                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                     </div>
                     <div class="form-group">
@@ -68,11 +68,11 @@
                             [(ngModel)]="user.password"
                             #password="ngModel"
                             placeholder="Password">
-                        <small
-                            class="errors"
+                        <p><small
+                            class="errors form-text"
                             [hidden]="password.valid || (password.untouched && !createUser.submitted)"
-                            >Password must be atleast 8 characters.
-                        </small>
+                            >Password must be atleast 8 characters, contain at least 1 number, uppercase, and a special character.
+                        </small></p>
                         <small id="emailHelp" class="form-text text-muted">Do not lose your password! </small>
                     </div>
                     <div class="form-group">

@@ -39,8 +39,8 @@ export class GuestbookRegisterComponent implements OnInit {
       },
       (err) => {
         // Display Errors
-        this.errors = [err];
-        console.log(this.errors, 'these errors are from the component');
+        var error = err.message.split(':');
+        this.errors = [error[error.length - 1]];
 
     });
   }
