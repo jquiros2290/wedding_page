@@ -8,6 +8,7 @@ import { GuestbookComponent } from './guestbook/guestbook.component';
 import { GuestbookLoginComponent } from './guestbook/guestbook-login/guestbook-login.component';
 import { GuestbookRegisterComponent } from './guestbook/guestbook-register/guestbook-register.component';
 import { GuestbookIndexComponent } from './guestbook/guestbook-index/guestbook-index.component';
+import { GuestbookPostComponent } from './guestbook/guestbook-post/guestbook-post.component';
 import { ComingComponent } from './coming/coming.component';
 
 const routes: Routes = [
@@ -19,7 +20,8 @@ const routes: Routes = [
 	{ path: 'guestbook', component: GuestbookComponent, children: [
 		{ path: 'login', component: GuestbookLoginComponent},
 		{ path: 'register', component: GuestbookRegisterComponent},
-		{ path: 'show', component: GuestbookIndexComponent}
+		{ path: 'show', component: GuestbookIndexComponent},
+		{ path: 'test', component: GuestbookPostComponent},
 	] },
 
 	];
