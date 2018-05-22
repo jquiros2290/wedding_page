@@ -6,7 +6,7 @@ module.exports = {
 	create: (req, res) => {
 		const post = new Post(req.body);
 
-		post._user = session.user_id;
+		post._user = req.session.user_id;
 		
 		post.save( (err) => {
 			if (err) {

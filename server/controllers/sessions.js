@@ -15,7 +15,7 @@ module.exports = {
             }
             bcrypt.compare(req.body.password, user.password)
             .then( () => {
-                session.user_id = user._id;
+                req.session.user_id = user._id;
                 return res.json(user);
             })
             .catch( () => {
@@ -25,7 +25,7 @@ module.exports = {
         });
     },
     find: (req, res) => {
-        User.findOne({_id: session.user_id}, (err, user) => {
+        User.findOne({_id: req.session.user_id}, (err, user) => {
             if (err) {
                 return res.json(err.errors);
             }
@@ -34,8 +34,8 @@ module.exports = {
         });
     },
     delete: (req, res) => {
-        if ('user_id' in session) {
-            delete session['user_id'];
+        if ('user_id' in req.session) {
+            delete req.session['user_id'];
             console.log('made it this far')
             return res.json('delete');
         }
