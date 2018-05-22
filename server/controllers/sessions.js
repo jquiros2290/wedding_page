@@ -1,6 +1,6 @@
 var session     = require('express-session');
 var User        = require('../models/user.js');
-var bcrypt      = require('bcrypt-as-promised')
+var bcrypt      = require('bcrypt')
 
 
 module.exports = {
@@ -13,14 +13,16 @@ module.exports = {
 
                 return res.status(400).json(error);
             }
-            bcrypt.compare(req.body.password, user.password)
-            .then( () => {
-                req.session.user_id = user._id;
-                return res.json(user);
-            })
-            .catch( () => {
-                let error = {message: 'Invalid Password'};
-                return res.status(400).json(error);
+
+            bcrypt.compare(req.body.password, user.password, function(err, response) {
+                if(response){
+
+                    req.session.user_id = user._id;
+                    return res.json(user);
+                }else{
+                    let error = {message: 'Invalid Password'};
+                    return res.status(400).json(error);
+                }
             });
         });
     },

@@ -32,6 +32,7 @@ export class GuestbookService {
   logUser(user, callback, errorback) {
   	this._http.post('/sessions', user).subscribe(
   		(res) => {
+        console.log(res, 'this is from the server');
   			const user = res.json();
   			this.currentUser = user;
   			callback(this.currentUser);

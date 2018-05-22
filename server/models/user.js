@@ -1,6 +1,6 @@
 // require mongoose
 var mongoose = require('mongoose');
-var bcrypt = require('bcrypt-as-promised');
+var bcrypt = require('bcrypt');
 // create the schema
 var UserSchema = new mongoose.Schema({
  	first_name: {
@@ -44,9 +44,9 @@ var UserSchema = new mongoose.Schema({
 UserSchema.methods = {
 	encryptPassword: function(next){
 		var user = this;
-		bcrypt.hash(user.password, 10)
-		.then( function(hashed_password){
-			user.password = hashed_password;
+
+		bcrypt.hash(user.password, 10, function(err, hash) {
+		  	user.password = hash;
 			next();
 		});
 	}
